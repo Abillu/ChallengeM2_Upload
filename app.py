@@ -128,7 +128,7 @@ def save_qualifying_loans(qualifying_loans):
     # Set the output header
     #Check if there any qualifying loans by checking the length of the qualifying loans array. If length is zero there are no qualifying loans
     if len(qualifying_loans) > 0 :
-        answer = questionary.text("Do you want to save the qualifying loans to file? (Y/N)").ask()
+        answer = questionary.text("Do you want to save the qualifying loans to file? (y/n)").ask()
         if answer == 'y':
             userpath = questionary.text("Enter a file path to save your csv file:").ask()                    
             csvsavepath = Path( f"{userpath}/qualifying_loans.csv")
@@ -139,7 +139,7 @@ def save_qualifying_loans(qualifying_loans):
             print()
             # @TODO: Use the csv library and `csv.writer` to write the header row
             # Use 'with open' to open new CSV filr
-            with open(csvsavepath, "w") as csvfile:
+            with open(csvsavepath, "w") as csvfile: 
 
                 # Use 'csv.writer' using csv library
                 csvwriter = csv.writer(csvfile, delimiter=",")

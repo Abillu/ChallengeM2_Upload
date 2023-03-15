@@ -27,8 +27,14 @@ To use the loan qualifier application simply clone the repository and run the **
 python app.py
 ```
 
-Upon launching thw loan qualifier application you will be greeted with the following prompts:
-![Loan Qualifier Prompts]()
+
+
+```text
+Upon launching the loan qualifier application you will be greeted with the following prompts:
+```
+![Loan Qualifier and Saving Prompts](images/loan_qualifier.JPG)
+![Loan Qualifier and Saving Prompts](images/loan_qualifier_no_saving.JPG)
+![Loan Qualifier and Saving Prompts](images/no_qualfying_loans.JPG)
 ---
 
 ## Contributors

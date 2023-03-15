@@ -98,7 +98,7 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     # Calculate loan to value ratio
     loan_to_value_ratio = calculate_loan_to_value_ratio(loan, home_value)
-    print(f"The loan to value ratio is {loan_to_value_ratio:.02f}.")
+    print(f"\nThe loan to value ratio is {loan_to_value_ratio:.02f}.\n")
 
     # Run qualification filters
     bank_data_filtered = filter_max_loan_size(loan, bank_data)
@@ -108,10 +108,10 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     bank_data_filtered = filter_loan_to_value(
         loan_to_value_ratio, bank_data_filtered)
 
-    print(f"Found {len(bank_data_filtered)} qualifying loans")
-    print()
+    print(f"\nFound {len(bank_data_filtered)} qualifying loans \n")
+  
     print(tabulate(bank_data_filtered, header))
-    print()
+   
 
     return bank_data_filtered
 
@@ -132,11 +132,9 @@ def save_qualifying_loans(qualifying_loans):
         if answer == 'y':
             userpath = questionary.text("Enter a file path to save your csv file:").ask()                    
             csvsavepath = Path( f"{userpath}/qualifying_loans.csv")
-            print()
-            print("Writing the data to a CSV file...")
-            print()
-            print()
-            print()
+            
+            print("\n Writing the data to a CSV file... \n\n\n")
+           
             # @TODO: Use the csv library and `csv.writer` to write the header row
             # Use 'with open' to open new CSV filr
             with open(csvsavepath, "w") as csvfile: 
@@ -155,12 +153,12 @@ def save_qualifying_loans(qualifying_loans):
                     csvwriter.writerow([qualifying_loan[0],qualifying_loan[1],qualifying_loan[2],qualifying_loan[3],qualifying_loan[4],qualifying_loan[5]])
             
         else:
-            print ("No file was saved because you opted not save file")
+            print ("\nNo file was saved because you opted not save file\n")
 
         
     else:
-        print()
-        print("There are no qualifying loans.")
+      
+        print("\nThere are no qualifying loans.\n")
 
 
 def run():
